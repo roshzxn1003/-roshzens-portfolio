@@ -1,7 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
-
-const links = ['About', 'Skills', 'Projects', 'Journey', 'Services', 'Contact']
+import { navLinks } from '../data/portfolio'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -19,7 +18,7 @@ function Navbar() {
         </a>
 
         <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 md:flex">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
@@ -43,7 +42,7 @@ function Navbar() {
       {open && (
         <div className="section-shell pt-2 md:hidden">
           <div className="glass-panel grid gap-1 rounded-2xl p-2">
-            {links.map((link) => (
+            {navLinks.map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
